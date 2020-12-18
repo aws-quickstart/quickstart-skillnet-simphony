@@ -1,0 +1,35 @@
+
+.Network configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|VPC ID
+(`VPCID`)|`**__Requires input__**`|CIDR block for the VPC.|Private subnet 1 ID
+(`PrivateSubnet1ID`)|`**__Requires input__**`|CIDR block for private subnet 1 located in Availability Zone 1.|Private subnet 2 ID
+(`PrivateSubnet2ID`)|`**__Requires input__**`|CIDR block for private subnet 2 located in Availability Zone 2.|Public subnet 1 ID
+(`PublicSubnet1ID`)|`**__Requires input__**`|CIDR block for the public (DMZ) subnet 1 located in Availability Zone 1.|Public subnet 2 ID
+(`PublicSubnet2ID`)|`**__Requires input__**`|CIDR block for the public (DMZ) subnet 2 located in Availability Zone 2.|Allowed bastion external access CIDR
+(`RemoteAccessCIDR`)|`**__Requires input__**`|CIDR IP range that is permitted to access the bastion/rdgw. We recommend that you set this value to a trusted IP range.
+|===
+.Simphony Environment configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Environment Size
+(`EnvironmentSize`)|`Small`|The Simphony Environment Size (S,M,L).|Key Pair Name
+(`KeyPairName`)|`**__Requires input__**`|EC2 key pair name.|Stack Name Prefix
+(`StackPrefix`)|`Simphony`|The prefix name to all the associated resources in the stack.|Puppet Server FQDN
+(`PuppetServerFQDN`)|`puppet.skillnetaws.com`|Assign Fully Qualified Domain Name for Puppet Server.
+|===
+.Backup configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|**NO_LABEL**
+(`DLMCrossRegionCopy`)|`us-east-2`|The Cross Region to copy the EC2 instance snapshots for backup.
+|===
+.AWS Quick Start configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Quick Start S3 bucket name
+(`QSS3BucketName`)|`skillnet-aws-isv-workload-migration`|S3 bucket name for the Quick Start assets. This string can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).|Quick Start S3 bucket region
+(`QSS3BucketRegion`)|`us-east-1`|The AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.|Quick Start S3 Key Prefix
+(`QSS3KeyPrefix`)|`simphony-quickstart/`|S3 key prefix for the Quick Start assets. Quick Start key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
+|===
