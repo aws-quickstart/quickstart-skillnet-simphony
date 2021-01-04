@@ -1,10 +1,11 @@
 :quickstart-project-name: quickstart-skillnet-simphony
 :partner-product-name: Oracle Hospitality Simphony POS
+:partner-product-short-name: Simphony
 :partner-company-name: SkillNet Solutions, Inc.
-:doc-month: November
-:doc-year: 2020
+:doc-month: January
+:doc-year: 2021
 :partner-contributors: Satheesh Kumar Thiyagarajan - Skillnet Solutions, Inc.
-:quickstart-contributors: Dave May - Partner Solution Architect, Quick Start team
+:quickstart-contributors: Dave May - Partner Solutions Architect, Quick Start team
 :deployment_time: 30 minutes
 :default_deployment_region: us-east-1
 // Uncomment these two attributes if you are leveraging

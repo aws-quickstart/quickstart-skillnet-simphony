@@ -2,14 +2,8 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-{partner-product-name} suite enables in-restaurant functions for medium to large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications to which the distributed in-store clients connect for data and transactional needs. 
+{partner-product-name} suite enables restaurant functions for medium-to-large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications that connect to distributed in-store clients for data and transactional needs. 
 
-Retail enterprises have traditionally hosted the central applications on premises. Typically, these services would support connections from stores located in multiple geographies across time zones using a variety of local internet service providers. These pose a multitude of issues including availability, latency and scaling to support peak loads. Retailers are looking at utilizing the AWS Cloud platform to host {partner-product-name} workloads, with benefits including:
+Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISP). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads. 
 
-* Reliability
-* High availability
-* Business agility
-* Faster deployment time
-* Low latency
-
-
+In response, retailers are using the AWS Cloud platform to host {partner-product-name} workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.

@@ -1,8 +1,8 @@
 // Include details about the license and how they can sign up. If no license is required, clarify that. 
 
-There are several licenses required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS managed options:
+Several licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:
 
-* Oracle Hospitality Simphony (BYOL)
+* {partner-product-name} (BYOL)
 * Oracle Database 12c (BYOL)
-* Oracle Enterprise Linux (GNU General Public License (GPLv2))
-* Microsoft Windows Server (BYOL / AWS Managed)
+* Oracle Enterprise Linux (GNU General Public License Version 2.0)
+* Microsoft Windows Server (BYOL or AWS-managed)

@@ -793,7 +793,12 @@ p.footer-text a{color:#d7d8d8}
 <li><a href="#_oracle_hospitality_simphony_pos_on_aws">Oracle Hospitality Simphony POS on AWS</a></li>
 <li><a href="#_cost">Cost</a></li>
 <li><a href="#_software_licenses">Software licenses</a></li>
-<li><a href="#_architecture">Architecture</a></li>
+<li><a href="#_architecture">Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_amazon_dlm">Amazon DLM</a></li>
+<li><a href="#_amazon_cloudwatch">Amazon CloudWatch</a></li>
+</ul>
+</li>
 <li><a href="#_planning_the_deployment">Planning the deployment</a>
 <ul class="sectlevel2">
 <li><a href="#_specialized_knowledge">Specialized knowledge</a></li>
@@ -834,9 +839,9 @@ p.footer-text a{color:#d7d8d8}
 </div>
 </div>
 <div class="paragraph text-center">
-<p><strong>November 2020</strong><br>
+<p><strong>January 2021</strong><br>
 <em>Satheesh Kumar Thiyagarajan - Skillnet Solutions, Inc.</em><br>
-<em>Dave May - Partner Solution Architect, Quick Start team</em></p>
+<em>Dave May - Partner Solutions Architect, Quick Start team</em></p>
 </div>
 <div class="admonitionblock tip text-left">
 <table>
@@ -863,7 +868,7 @@ report bugs, or submit feature ideas for this Quick Start.
 <p>This Quick Start reference deployment guide provides step-by-step instructions for deploying Oracle Hospitality Simphony Point-of-Sale (POS) on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start is for customers who are looking to either migrate their existing Oracle Hospitality Simphony POS workload to AWS or deploy a net-new Oracle Hospitality Simphony POS workload on AWS. The objective of this playbook is to provide a prescribed migration framework for hosting Oracle Hospitality Simphony POS (transaction and reporting server) on AWS.</p>
+<p>This Quick Start is for customers who want to either migrate their existing Simphony workload to AWS or deploy a net-new Simphony workload on AWS. This reference guide provides a prescribed migration framework for hosting the Simphony transaction and reporting server on AWS.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -883,29 +888,13 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h2 id="_oracle_hospitality_simphony_pos_on_aws">Oracle Hospitality Simphony POS on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Oracle Hospitality Simphony POS suite enables in-restaurant functions for medium to large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications to which the distributed in-store clients connect for data and transactional needs.</p>
+<p>Oracle Hospitality Simphony POS suite enables restaurant functions for medium-to-large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications that connect to distributed in-store clients for data and transactional needs.</p>
 </div>
 <div class="paragraph">
-<p>Retail enterprises have traditionally hosted the central applications on premises. Typically, these services would support connections from stores located in multiple geographies across time zones using a variety of local internet service providers. These pose a multitude of issues including availability, latency and scaling to support peak loads. Retailers are looking at utilizing the AWS Cloud platform to host Oracle Hospitality Simphony POS workloads, with benefits including:</p>
+<p>Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISP). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reliability</p>
-</li>
-<li>
-<p>High availability</p>
-</li>
-<li>
-<p>Business agility</p>
-</li>
-<li>
-<p>Faster deployment time</p>
-</li>
-<li>
-<p>Low latency</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>In response, retailers are using the AWS Cloud platform to host Oracle Hospitality Simphony POS workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.</p>
 </div>
 </div>
 </div>
@@ -941,21 +930,21 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <h2 id="_software_licenses">Software licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are several licenses required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS managed options:</p>
+<p>Several licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Oracle Hospitality Simphony (BYOL)</p>
+<p>Oracle Hospitality Simphony POS (BYOL)</p>
 </li>
 <li>
 <p>Oracle Database 12c (BYOL)</p>
 </li>
 <li>
-<p>Oracle Enterprise Linux (GNU General Public License (GPLv2))</p>
+<p>Oracle Enterprise Linux (GNU General Public License Version 2.0)</p>
 </li>
 <li>
-<p>Microsoft Windows Server (BYOL / AWS Managed)</p>
+<p>Microsoft Windows Server (BYOL or AWS-managed)</p>
 </li>
 </ul>
 </div>
@@ -966,91 +955,96 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <div class="sectionbody">
 <div class="paragraph">
 <p>Deploying this Quick Start for a new virtual private cloud (VPC) with
-<strong>default parameters</strong> builds the following <em>Oracle Hospitality Simphony POS</em> environment in the
+default parameters builds the following Simphony environment in the
 AWS Cloud.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<a class="image" href="images/architecture_diagram.png"><img src="images/architecture_diagram.png" alt="Architecture" width="648" height="439"></a>
+<a class="image" href="images/architecture_diagram.png"><img src="images/skillnet-simphony-architecture-diagram.png" alt="Architecture" width="648" height="439"></a>
 </div>
-<div class="title">Figure 1. Quick Start architecture for <em>Oracle Hospitality Simphony POS</em> on AWS</div>
+<div class="title">Figure 1. Quick Start architecture for Oracle Hospitality Simphony POS on AWS</div>
 </div>
 <div class="paragraph">
-<p>As shown in Figure 1, the Quick Start sets up the following:</p>
+<p>As shown in <a href="#architecture1">Quick Start architecture for Oracle Hospitality Simphony POS on AWS</a>, the Quick Start sets up the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>A VPC configured with public and private subnets, according to AWS best practices, to provide you with your own virtual network on AWS.*</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
+<li>
 <p>In the public subnets:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
 <p>Managed network address translation (NAT) gateways to allow outbound internet access for resources in the private subnets.*</p>
 </li>
 <li>
-<p>A Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to EC2 instances in public and private subnets.*</p>
+<p>A Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in public and private subnets.*</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>In the private subnets:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Oracle database running on an EC2 instance for the Simphony and Reporting and Analytics (R&amp;A) applications database.</p>
+<p>Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&amp;A) applications database.</p>
 </li>
 <li>
-<p>An application server running on an EC2 instance for the Simphony and Reporting and Analytics (R&amp;A) applications deployment.</p>
+<p>An application server running on an Amazon EC2 instance for the Simphony and R&amp;A applications deployment.</p>
 </li>
 <li>
-<p>A Puppet server running on an EC2 instance for Oracle database installation, JDK installation, and Windows IIS server configuration.</p>
+<p>A Puppet server running on an Amazon EC2 instance for Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. In addition, Amazon Data Lifecycle Manager (Amazon DLM) is included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes.</p>
+</li>
+<li>
+<p>Amazon CloudWatch to collect monitoring and operational data for AWS resources, applications, and services.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Amazon Data Lifecycle Manager (DLM)</strong> to automate the creation, retention, and deletion of snapshots of the Amazon Elastic Block Storage (EBS) volumes. Automating snapshot management accomplishes the following:</p>
+<p><span class="small">*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.</span></p>
+</div>
+<div class="sect2">
+<h3 id="_amazon_dlm">Amazon DLM</h3>
+<div class="paragraph">
+<p>Using Amazon DLM to automate how you manage EBS snapshots, you can:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Protects valuable data by enforcing a regular backup schedule.</p>
+<p>Protect valuable data by enforcing a regular backup schedule.</p>
 </li>
 <li>
-<p>Retains backups as required by auditors or for internal compliance.</p>
+<p>Retain backups as required by auditors or for internal compliance.</p>
 </li>
 <li>
-<p>Reduces storage costs by deleting outdated backups.</p>
+<p>Reduce storage costs by deleting outdated backups.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>DLM is configured as follows:</p>
+<p>When you configure DLM, note the following:
+* The EC2 tag (Name: <strong>LCM_TAG</strong>, Value: <strong>SIM</strong> ) key-value pair is used to take snapshots.
+* The most recent 3 snapshots are retained.
+* A copy of each snapshot is stored in another AWS Region for data redundancy.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The EC2 tag ( Name: <strong>LCM_TAG</strong> , Value: <strong>SIM</strong> ) key-value pair is used to take snapshots.</p>
-</li>
-<li>
-<p>The most recent 3 snapshots are retained.</p>
-</li>
-<li>
-<p>A copy of each snapshot is stored in another AWS Region for data redundancy.</p>
-</li>
-</ul>
+</div>
+<div class="sect2">
+<h3 id="_amazon_cloudwatch">Amazon CloudWatch</h3>
+<div class="paragraph">
+<p>Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, Site Reliability Engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health.</p>
 </div>
 <div class="paragraph">
-<p><strong>Amazon CloudWatch</strong> is a monitoring and observability service built for DevOps Engineers, Developers, Site Reliability Engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly.</p>
+<p>CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly.</p>
 </div>
-<div class="paragraph">
-<p>*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.</p>
 </div>
 </div>
 </div>
@@ -1918,10 +1912,10 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 <p>Choose <strong>Create stack</strong> to deploy the stack.</p>
 </li>
 <li>
-<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Oracle Hospitality Simphony POS deployment is ready.</p>
+<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Simphony deployment is ready.</p>
 </li>
 <li>
-<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in <a href="#cfn_outputs">Oracle Hospitality Simphony POS outputs after successful deployment</a>, to view the created resources.</p>
+<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in <a href="#cfn_outputs">Simphony outputs after successful deployment</a>, to view the created resources.</p>
 </li>
 </ol>
 </div>
@@ -1929,7 +1923,7 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 <div class="content">
 <a class="image" href="images/cfn_outputs.png"><img src="images/cfn_outputs.png" alt="cfn_outputs" width="100%" height="100%"></a>
 </div>
-<div class="title">Figure 2. Oracle Hospitality Simphony POS outputs after successful deployment</div>
+<div class="title">Figure 2. Simphony outputs after successful deployment</div>
 </div>
 </div>
 </div>

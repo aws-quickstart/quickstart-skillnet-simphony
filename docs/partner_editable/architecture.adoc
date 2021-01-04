@@ -1,41 +1,42 @@
 Deploying this Quick Start for a new virtual private cloud (VPC) with
-*default parameters* builds the following _{partner-product-name}_ environment in the
+default parameters builds the following {partner-product-short-name} environment in the
 AWS Cloud.
 
 // Replace this example diagram with your own. Send us your source PowerPoint file. Be sure to follow our guidelines here : http://(we should include these points on our contributors giude)
 [#architecture1]
-.Quick Start architecture for _{partner-product-name}_ on AWS
+.Quick Start architecture for {partner-product-name} on AWS
 [link=images/architecture_diagram.png]
-image::../images/architecture_diagram.png[Architecture,width=648,height=439]
+image::../images/skillnet-simphony-architecture-diagram.png[Architecture,width=648,height=439]
 
-As shown in Figure 1, the Quick Start sets up the following:
+As shown in <<#architecture1>>, the Quick Start sets up the following:
 
 * A VPC configured with public and private subnets, according to AWS best practices, to provide you with your own virtual network on AWS.*
-
-In the public subnets:
-
-* Managed network address translation (NAT) gateways to allow outbound internet access for resources in the private subnets.*
-* A Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to EC2 instances in public and private subnets.*
-
-In the private subnets:
+* In the public subnets:
+** Managed network address translation (NAT) gateways to allow outbound internet access for resources in the private subnets.*
+** A Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in public and private subnets.*
+* In the private subnets:
 // Add bullet points for any additional components that are included in the deployment. Make sure that the additional components are also represented in the architecture diagram.
+** Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&A) applications database.
+** An application server running on an Amazon EC2 instance for the Simphony and R&A applications deployment.
+** A Puppet server running on an Amazon EC2 instance for Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.
+* Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. In addition, Amazon Data Lifecycle Manager (Amazon DLM) is included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes. 
+* Amazon CloudWatch to collect monitoring and operational data for AWS resources, applications, and services. 
 
-* Oracle database running on an EC2 instance for the Simphony and Reporting and Analytics (R&A) applications database.
-* An application server running on an EC2 instance for the Simphony and Reporting and Analytics (R&A) applications deployment.
-* A Puppet server running on an EC2 instance for Oracle database installation, JDK installation, and Windows IIS server configuration.
+[.small]#*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.# 
 
-*Amazon Data Lifecycle Manager (DLM)* to automate the creation, retention, and deletion of snapshots of the Amazon Elastic Block Storage (EBS) volumes. Automating snapshot management accomplishes the following:
+=== Amazon DLM
+Using Amazon DLM to automate how you manage EBS snapshots, you can:
 
-* Protects valuable data by enforcing a regular backup schedule.
-* Retains backups as required by auditors or for internal compliance.
-* Reduces storage costs by deleting outdated backups.
+* Protect valuable data by enforcing a regular backup schedule.
+* Retain backups as required by auditors or for internal compliance.
+* Reduce storage costs by deleting outdated backups. 
 
-DLM is configured as follows:
-
-* The EC2 tag ( Name: *LCM_TAG* , Value: *SIM* ) key-value pair is used to take snapshots.
+When you configure DLM, note the following: 
+* The EC2 tag (Name: *LCM_TAG*, Value: *SIM* ) key-value pair is used to take snapshots.
 * The most recent 3 snapshots are retained. 
 * A copy of each snapshot is stored in another AWS Region for data redundancy.
 
-*Amazon CloudWatch* is a monitoring and observability service built for DevOps Engineers, Developers, Site Reliability Engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly. 
+=== Amazon CloudWatch
+Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, Site Reliability Engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. 
 
-*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration. 
+CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly. 
