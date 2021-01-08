@@ -3,22 +3,19 @@
 
 == Post deployment steps
 // If Post-deployment steps are required, add them here. If not, remove the heading
-Disable the Auto Scaling Groups for the Oracle database, application server, and bastion host.
+Disable the Auto Scaling Groups for the Oracle database, application server, and bastion host, and then follow these steps:
 
-. Select Auto Scaling Group for Oracle Database.
-. In the Details tab, click the "edit" button.
-. Click on the "Suspended Processes" link and select all the processes in the list, to suspend all the processes.
-. Repeat all the above steps for Application server and Bastion Host, also.
+. Select the Auto Scaling group for the Oracle database.
+. In the *Details* tab, select the *Edit* button.
+. Select the *Suspended Processes* link, and suspend all the processes in the list. 
+. Repeat these steps for the application server and the bastion host.
 
-== Security
+== Monitoring infrastructure
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
+You can use Amazon CloudWatch to monitor the AWS Cloud resources and applications that you run on AWS. CloudWatch lets you monitor your AWS resources in near real-time, including Amazon EC2 instances, Amazon EBS volumes, and database instances. Metrics such as CPU utilization, latency, and request counts are provided automatically for these AWS resources. You can also supply your own logs, custom applications, and system metrics (such as memory usage, transaction volumes, and error rates) for CloudWatch to monitor.
 
-*Monitoring Infrastructure* 
-
-You can also use Amazon CloudWatch to monitor the AWS Cloud resources the applications you run on AWS. Amazon CloudWatch enables you to monitor your AWS resources in near real-time, including Amazon EC2 instances, Amazon EBS volumes and Database instances. Metrics such as CPU utilization, latency, and request counts are provided automatically for these AWS resources. You can also supply your own logs or custom application and system metrics, such as memory usage, transaction volumes, or error rates, which Amazon CloudWatch will also monitor.
-
-With Amazon CloudWatch alarms, you can set a threshold on metrics and trigger an action when that threshold is exceeded. For example, you can create an alarm that is triggered when the CPU utilization on an EC2 instance crosses a threshold. You can also configure a notification of the event to be sent through SMS or email. Real-time alarms for metrics and events enable you to minimize downtime and potential business impact. 
+With CloudWatch alarms, you can set a threshold on metrics and trigger an action when that threshold is exceeded. For example, you can create an alarm that is triggered when the CPU utilization on an EC2 instance crosses a threshold. You can also configure a notification of the event to be sent through an SMS text message or email. Real-time alarms for metrics and events let you minimize downtime and potential business impact. 
 
 == Support
 
-The {partner-company-name} support team is standing by to assist you with setting up {partner-product-name} on your AWS environment. Send an email to support_simphony@skillnetinc.com to contact the support team.
+The {partner-company-short-name} support team is standing by to assist you with setting up {partner-product-short-name} on your AWS environment. Send an email to support_simphony@skillnetinc.com to contact the support team.

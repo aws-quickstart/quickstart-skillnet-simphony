@@ -8,7 +8,7 @@ AWS Cloud.
 [link=images/architecture_diagram.png]
 image::../images/skillnet-simphony-architecture-diagram.png[Architecture,width=648,height=439]
 
-As shown in <<#architecture1>>, the Quick Start sets up the following:
+As shown in Figure 1, the Quick Start sets up the following:
 
 * A VPC configured with public and private subnets, according to AWS best practices, to provide you with your own virtual network on AWS.*
 * In the public subnets:
@@ -32,8 +32,9 @@ Using Amazon DLM to automate how you manage EBS snapshots, you can:
 * Reduce storage costs by deleting outdated backups. 
 
 When you configure DLM, note the following: 
-* The EC2 tag (Name: *LCM_TAG*, Value: *SIM* ) key-value pair is used to take snapshots.
-* The most recent 3 snapshots are retained. 
+
+* The EC2 tag key-value pair (Name: *LCM_TAG*, Value: *SIM*) is used to take snapshots.
+* The most recent three snapshots are retained. 
 * A copy of each snapshot is stored in another AWS Region for data redundancy.
 
 === Amazon CloudWatch
