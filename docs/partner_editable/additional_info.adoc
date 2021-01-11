@@ -3,7 +3,7 @@
 
 == Post deployment steps
 // If Post-deployment steps are required, add them here. If not, remove the heading
-Disable the Auto Scaling Groups for the Oracle database, application server, and bastion host, and then follow these steps:
+Disable the Auto Scaling Groups for the Oracle database, application server, and bastion host:
 
 . Select the Auto Scaling group for the Oracle database.
 . In the *Details* tab, select the *Edit* button.
@@ -18,4 +18,4 @@ With CloudWatch alarms, you can set a threshold on metrics and trigger an action
 
 == Support
 
-The {partner-company-short-name} support team is standing by to assist you with setting up {partner-product-short-name} on your AWS environment. Send an email to support_simphony@skillnetinc.com to contact the support team.
+The {partner-product-short-name} support team is standing by to assist you with setting up {partner-product-short-name} on your AWS environment. Send an email to support_simphony@skillnetinc.com to contact the support team.
