@@ -3,10 +3,4 @@
 include::simphony-entrypoint-existing-vpc.template.adoc[]
 
 === Launch into a new VPC
-include::simphony-new-vpc.template.adoc[]
-
-=== Launch into an existing VPC
-include::simphony-qs-main.template.adoc[]
-
-=== Launch into a new VPC
 include::simphony-entrypoint-new-vpc.template.adoc[]
