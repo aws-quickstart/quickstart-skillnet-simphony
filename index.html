@@ -893,10 +893,10 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <p>Oracle Hospitality Simphony POS suite enables restaurant functions for medium-to-large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications that connect to distributed in-store clients for data and transactional needs.</p>
 </div>
 <div class="paragraph">
-<p>Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISP). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads.</p>
+<p>Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISPs). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads.</p>
 </div>
 <div class="paragraph">
-<p>In response, retailers are using the AWS Cloud platform to host Oracle Hospitality Simphony POS workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.</p>
+<p>In response, retailers are using the AWS Cloud platform to host Simphony workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.</p>
 </div>
 </div>
 </div>
@@ -931,7 +931,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <h2 id="_software_licenses">Software licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Several licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:</p>
+<p>The following licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -991,19 +991,19 @@ AWS Cloud.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&amp;A) applications database.</p>
+<p>An Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&amp;A) applications database.</p>
 </li>
 <li>
 <p>An application server running on an Amazon EC2 instance for the Simphony and R&amp;A applications deployment.</p>
 </li>
 <li>
-<p>A Puppet server running on an Amazon EC2 instance for Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.</p>
+<p>A Puppet server running on an Amazon EC2 instance for the Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. In addition, Amazon Data Lifecycle Manager (Amazon DLM) is included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes.</p>
+<p>Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. Amazon Data Lifecycle Manager (Amazon DLM) is also included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes.</p>
 </li>
 <li>
 <p>Amazon CloudWatch to collect monitoring and operational data for AWS resources, applications, and services.</p>
@@ -1016,7 +1016,7 @@ AWS Cloud.</p>
 <div class="sect2">
 <h3 id="_amazon_dlm">Amazon DLM</h3>
 <div class="paragraph">
-<p>Using Amazon DLM to automate how you manage EBS snapshots, you can:</p>
+<p>Using Amazon DLM to automate how you manage Amazon EBS snapshots, you can:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1315,13 +1315,13 @@ You are responsible for the cost of the AWS services used while running this Qui
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-If you are deploying Oracle Hospitality Simphony POS into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html" target="_blank" rel="noopener">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables to allow the instances to download packages and software without exposing them to the internet.
+If you are deploying Simphony into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html" target="_blank" rel="noopener">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables to allow the instances to download packages and software without exposing them to the internet.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Also, make sure that the domain name option in the DHCP options is configured, as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank" rel="noopener">DHCP options sets</a>. You provide your VPC settings when you launch the Quick Start.</p>
+<p>Also, make sure that the domain name in the DHCP options is configured, as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank" rel="noopener">DHCP options sets</a>. You provide your VPC settings when you launch the Quick Start.</p>
 </div>
 <div class="paragraph">
 <p>Each deployment takes about 30 minutes to complete.</p>
@@ -1329,7 +1329,7 @@ If you are deploying Oracle Hospitality Simphony POS into an existing VPC, make 
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This Region is where the network infrastructure for Oracle Hospitality Simphony POS is built. The template is launched in the us-east-1 Region by default.</p>
+<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This Region is where the network infrastructure for Simphony is built. The template is launched in the us-east-1 Region by default.</p>
 </li>
 </ol>
 </div>
@@ -1442,7 +1442,7 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <p><strong>Q.</strong> I encountered a size limitation error when I deployed the AWS CloudFormation templates.</p>
 </div>
 <div class="paragraph">
-<p><strong>A.</strong> Launch the Quick Start templates from the links in this guide or from another Amazon Simple Storage Service (Amazon S3) bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html" target="_blank" rel="noopener">AWS CloudFormation quotas</a> in the AWS documentation.</p>
+<p><strong>A.</strong> Launch the Quick Start templates from the links in this guide or from another Amazon S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html" target="_blank" rel="noopener">AWS CloudFormation quotas</a> in the AWS documentation.</p>
 </div>
 </div>
 </div>
@@ -1513,12 +1513,12 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock">Allowed bastion external access CIDR
 (<code>RemoteAccessCIDR</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR IP range that is permitted to access the bastion/rdgw. We recommend that you set this value to a trusted IP range.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR IP range that is permitted to access the bastion host/Remote Desktop Gateway server. Set this value to a trusted IP range.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Simphony Environment configuration</caption>
+<caption class="title">Table 2. Simphony environment configuration</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 11%;">
@@ -1533,28 +1533,28 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Size
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment size
 (<code>EnvironmentSize</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Small</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Simphony Environment Size (S,M,L).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Simphony environment size.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key Pair Name
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key pair name
 (<code>KeyPairName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EC2 key pair name.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stack Name Prefix
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stack name prefix
 (<code>StackPrefix</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Simphony</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The prefix name to all the associated resources in the stack.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Puppet Server FQDN
+<td class="tableblock halign-left valign-top"><p class="tableblock">Puppet server FQDN
 (<code>PuppetServerFQDN</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puppet.skillnetaws.com</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assign Fully Qualified Domain Name for Puppet Server.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assign Fully Qualified Domain Name (FQDN) for the Puppet server.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1577,7 +1577,7 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NO_LABEL</strong>
 (<code>DLMCrossRegionCopy</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>us-east-2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Cross Region to copy the EC2 instance snapshots for backup.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Cross-Region to copy the EC2 instance snapshots for backup.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1600,19 +1600,19 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket name
 (<code>QSS3BucketName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skillnet-aws-isv-workload-migration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3 bucket name for the Quick Start assets. This string can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the S3 bucket for your copy of the Quick Start assets. Keep the default name unless you are customizing the template. Changing the name updates code references to point to a new Quick Start location. This name can include numbers, lowercase letters, uppercase letters, and hyphens, but do not start or end with a hyphen (-). See <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket region
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket Region
 (<code>QSS3BucketRegion</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>us-east-1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. Keep the default Region unless you are customizing the template. Changing this Region updates code references to point to a new Quick Start location. When using your own bucket, specify the Region. See <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 Key Prefix
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 key prefix
 (<code>QSS3KeyPrefix</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>simphony-quickstart/</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3 key prefix for the Quick Start assets. Quick Start key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 key prefix that is used to simulate a directory for your copy of the Quick Start assets. Keep the default prefix unless you are customizing the template. Changing this prefix updates code references to point to a new Quick Start location. This prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slashes (/). See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html" class="bare">https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html</a> and <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1638,7 +1638,7 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock">Availability Zones
 (<code>AvailabilityZones</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of Availability Zones to use for the subnets in the VPC. Only two Availability Zones are used for this deployment, and the logical order of your selections is preserved.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Availability Zones to use for the subnets in the VPC. Only two Availability Zones are used for this deployment. The logical order of your selections is preserved.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VPC CIDR
@@ -1674,12 +1674,12 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock">Allowed bastion external access CIDR
 (<code>RemoteAccessCIDR</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR IP range that is permitted to access the bastion/rdgw. We recommend that you set this value to a trusted IP range.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR IP range that is permitted to access the bastion host/Remote Desktop Gateway server. Set this value to a trusted IP range.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Simphony Environment configuration</caption>
+<caption class="title">Table 6. Simphony environment configuration</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 11%;">
@@ -1694,28 +1694,28 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Size
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment size
 (<code>EnvironmentSize</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Small</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Simphony Environment Size (S,M,L).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Simphony environment size.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key Pair Name
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key pair name
 (<code>KeyPairName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EC2 key pair name.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stack Name Prefix
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stack name prefix
 (<code>StackPrefix</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Simphony</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The prefix name to all the associated resources in the stack.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Puppet Server FQDN
+<td class="tableblock halign-left valign-top"><p class="tableblock">Puppet server FQDN
 (<code>PuppetServerFQDN</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puppet.skillnetaws.com</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assign Fully Qualified Domain Name for Puppet Server.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assign Fully Qualified Domain Name (FQDN) for the Puppet server.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1738,7 +1738,7 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NO_LABEL</strong>
 (<code>DLMCrossRegionCopy</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>us-east-2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Cross Region to copy the EC2 instance snapshots for backup.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Cross-Region to copy the EC2 instance snapshots for backup.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1761,19 +1761,19 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket name
 (<code>QSS3BucketName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>aws-quickstart</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3 bucket name for the Quick Start assets. This string can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the S3 bucket for your copy of the Quick Start assets. Keep the default name unless you are customizing the template. Changing the name updates code references to point to a new Quick Start location. This name can include numbers, lowercase letters, uppercase letters, and hyphens, but do not start or end with a hyphen (-). See <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket region
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 bucket Region
 (<code>QSS3BucketRegion</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>us-east-1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. Keep the default Region unless you are customizing the template. Changing this Region updates code references to point to a new Quick Start location. When using your own bucket, specify the Region. See <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 Key Prefix
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quick Start S3 key prefix
 (<code>QSS3KeyPrefix</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>quickstart-skillnet-simphony/</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3 key prefix for the Quick Start assets. Quick Start key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 key prefix that is used to simulate a directory for your copy of the Quick Start assets. Keep the default prefix unless you are customizing the template. Changing this prefix updates code references to point to a new Quick Start location. This prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slashes (/). See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html" class="bare">https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html</a> and <a href="https://aws-quickstart.github.io/option1.html" class="bare">https://aws-quickstart.github.io/option1.html</a>.</p></td>
 </tr>
 </tbody>
 </table>

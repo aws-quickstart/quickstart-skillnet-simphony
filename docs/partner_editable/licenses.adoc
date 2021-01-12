@@ -1,6 +1,6 @@
 // Include details about the license and how they can sign up. If no license is required, clarify that. 
 
-Several licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:
+The following licenses are required for this Quick Start, with multiple combinations of bring-your-own-license (BYOL) and AWS-managed options:
 
 * {partner-product-name} (BYOL)
 * Oracle Database 12c (BYOL)

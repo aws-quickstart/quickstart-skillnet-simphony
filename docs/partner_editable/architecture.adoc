@@ -16,16 +16,16 @@ As shown in Figure 1, the Quick Start sets up the following:
 ** A Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in public and private subnets.*
 * In the private subnets:
 // Add bullet points for any additional components that are included in the deployment. Make sure that the additional components are also represented in the architecture diagram.
-** Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&A) applications database.
+** An Oracle database running on an Amazon EC2 instance for the Simphony and Reporting and Analytics (R&A) applications database.
 ** An application server running on an Amazon EC2 instance for the Simphony and R&A applications deployment.
-** A Puppet server running on an Amazon EC2 instance for Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.
-* Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. In addition, Amazon Data Lifecycle Manager (Amazon DLM) is included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes. 
+** A Puppet server running on an Amazon EC2 instance for the Oracle database installation, Java Development Kit (JDK) installation, and Windows Internet Information Services (IIS) server configuration.
+* Amazon Elastic Block Storage (Amazon EBS) to provide storage volumes used with EC2 instances. Amazon Data Lifecycle Manager (Amazon DLM) is also included to automate the creation, retention, and deletion of snapshots of the Amazon EBS volumes. 
 * Amazon CloudWatch to collect monitoring and operational data for AWS resources, applications, and services. 
 
 [.small]#*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.# 
 
 === Amazon DLM
-Using Amazon DLM to automate how you manage EBS snapshots, you can:
+Using Amazon DLM to automate how you manage Amazon EBS snapshots, you can:
 
 * Protect valuable data by enforcing a regular backup schedule.
 * Retain backups as required by auditors or for internal compliance.

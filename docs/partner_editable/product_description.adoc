@@ -4,6 +4,6 @@
 
 {partner-product-name} suite enables restaurant functions for medium-to-large enterprises across geographical regions. The Oracle POS suite relies on centrally hosted server applications that connect to distributed in-store clients for data and transactional needs. 
 
-Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISP). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads. 
+Retail enterprises have traditionally hosted central applications on premises using services that support connections from stores located in multiple geographies across time zones using a variety of local internet service providers (ISPs). This on-premises hosting option can cause several issues, including availability, latency, and scaling to support peak loads. 
 
-In response, retailers are using the AWS Cloud platform to host {partner-product-name} workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.
+In response, retailers are using the AWS Cloud platform to host {partner-product-short-name} workloads, with benefits including reliability, high availability, business agility, faster deployment time, and low latency.
